@@ -1,0 +1,1268 @@
+/* ==========================================================================
+   40 RECEITAS CASEIRAS PARA AJUDAR A ALIVIAR A TOSSE
+   Design System & Estilos Modernos e Responsivos
+   Paleta Oficial:
+   - Castanho Escuro: #4B3022
+   - Castanho Profundo: #29180F
+   - Branco: #FFFFFF
+   - Laranja Suave (Acentos & Botões): #E96835
+   - Bege Claro: #E8D5B8
+   ========================================================================== */
+
+:root {
+  --color-primary: #4B3022;
+  --color-primary-dark: #29180F;
+  --color-primary-light: #6A4733;
+  --color-accent: #E96835;
+  --color-accent-hover: #D75624;
+  --color-accent-active: #BF481A;
+  --color-accent-glow: rgba(233, 104, 53, 0.28);
+  --color-beige: #E8D5B8;
+  --color-beige-light: #F7EFE4;
+  --color-beige-ultra: #FAF6F0;
+  --color-white: #FFFFFF;
+  --color-text-main: #29180F;
+  --color-text-muted: #64493A;
+  --color-text-light: #8E7363;
+  --color-border: #E3D1BA;
+  --color-border-focus: #E96835;
+  --color-card-bg: #FFFFFF;
+  --color-success: #2E7D32;
+  --color-error: #D32F2F;
+
+  --shadow-sm: 0 2px 8px rgba(41, 24, 15, 0.05);
+  --shadow-md: 0 8px 24px rgba(41, 24, 15, 0.08);
+  --shadow-lg: 0 16px 40px rgba(41, 24, 15, 0.12);
+  --shadow-xl: 0 24px 60px rgba(41, 24, 15, 0.16);
+  --shadow-accent: 0 10px 28px rgba(233, 104, 53, 0.35);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --transition-fast: 0.18s cubic-bezier(0.2, 0, 0, 1);
+  --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-bounce: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Reset Global & Acessibilidade */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  background-color: var(--color-beige-ultra);
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(232, 213, 184, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(233, 104, 53, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(247, 239, 228, 0.6) 0%, transparent 70%);
+  background-attachment: fixed;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Efeitos Luminosos de Fundo */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.glow-1 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, var(--color-beige) 0%, transparent 70%);
+  top: -100px;
+  right: -80px;
+}
+
+.glow-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(233, 104, 53, 0.12) 0%, transparent 70%);
+  top: 35%;
+  left: -120px;
+}
+
+.glow-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232, 213, 184, 0.5) 0%, transparent 70%);
+  bottom: 50px;
+  right: -50px;
+}
+
+/* Container Central */
+.container {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+.site-header {
+  padding: 3rem 0 1.75rem;
+  text-align: center;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-beige);
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.badge-icon {
+  font-size: 1.05rem;
+}
+
+.main-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-primary-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.15rem;
+  max-width: 680px;
+  animation: fadeIn 0.7s ease-out;
+}
+
+.highlight-text {
+  color: var(--color-accent);
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(233, 104, 53, 0.15);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.intro-text {
+  font-size: 1.08rem;
+  color: var(--color-text-muted);
+  max-width: 620px;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Pílulas de Ingredientes Naturais */
+.ingredient-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  animation: fadeIn 0.9s ease-out;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  box-shadow: 0 2px 6px rgba(75, 48, 34, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.pill-emoji {
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL & CARD INTERATIVO
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  padding-bottom: 3.5rem;
+}
+
+.quiz-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xl);
+  padding: 2.25rem 2.25rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: min-height 0.3s ease;
+}
+
+.quiz-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-beige));
+}
+
+/* Barra de Progresso */
+.quiz-progress-area {
+  margin-bottom: 2rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.progress-step-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.progress-percent {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-beige-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Viewport das Perguntas */
+.quiz-step-viewport {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.step-container {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.step-container.anim-fade-out {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.step-container.anim-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tipografia das Perguntas */
+.step-number-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: rgba(233, 104, 53, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.step-question-title {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+
+.step-question-hint {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Campo de Input de Texto (Pergunta 1 - Nome) */
+.input-name-group {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-name-field {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  padding: 1.1rem 1.4rem;
+  background-color: var(--color-beige-ultra);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: all var(--transition-fast);
+  box-shadow: inset 0 2px 4px rgba(41, 24, 15, 0.04);
+}
+
+.input-name-field:focus {
+  border-color: var(--color-accent);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 4px var(--color-accent-glow);
+}
+
+.input-name-field::placeholder {
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.input-error-msg {
+  display: none;
+  color: var(--color-error);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.input-error-msg.visible {
+  display: flex;
+}
+
+/* Opções de Respostas (Botões Grandes e Modernos) */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  background: var(--color-beige-ultra);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.05rem 1.35rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.option-btn:hover {
+  background: var(--color-white);
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.option-btn:active {
+  transform: translateY(0);
+}
+
+/* Estado Selecionado */
+.option-btn.selected {
+  background: var(--color-white);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-glow), var(--shadow-md);
+  color: var(--color-accent);
+}
+
+.option-btn .option-text {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+/* Indicador de Seleção Circular / Check */
+.option-btn .option-indicator {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  background: var(--color-white);
+}
+
+.option-btn.selected .option-indicator {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* Checkbox estilizado para Pergunta Múltipla Escolha */
+.option-btn.multi-option .option-indicator {
+  border-radius: 6px;
+}
+
+.option-indicator svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--color-white);
+  stroke-width: 3;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all var(--transition-fast);
+}
+
+.option-btn.selected .option-indicator svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Feedback de toque rápido */
+.option-btn.clicked-flash {
+  border-color: var(--color-accent);
+  background-color: rgba(233, 104, 53, 0.08);
+}
+
+/* Barra de Navegação Inferior do Formulário */
+.quiz-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-beige-light);
+}
+
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.85rem 1.65rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-beige-ultra);
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary-light);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  margin-left: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   TELA FINAL / RESULTADO & OFERTA PERSUASIVA
+   ========================================================================== */
+.result-screen {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+
+.result-badge-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.celebration-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #E8F5E9;
+  border: 1px solid #A5D6A7;
+  color: var(--color-success);
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.result-title {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+}
+
+.result-subtitle {
+  font-size: 1.12rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 2.25rem;
+}
+
+/* ==========================================================================
+   MOCKUP MODERNO DO EBOOK DIGITAL (Tablet & Smartphone em 3D)
+   ========================================================================== */
+.mockup-showcase {
+  perspective: 1200px;
+  margin: 1.5rem auto 2.5rem;
+  padding: 1.5rem 0.5rem;
+  position: relative;
+}
+
+.mockup-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 340px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Tablet Mockup (Ebook Digital) */
+.device-tablet {
+  width: 310px;
+  height: 380px;
+  background: #1C1512;
+  border-radius: 28px;
+  padding: 14px;
+  box-shadow: 
+    0 25px 60px -12px rgba(41, 24, 15, 0.35),
+    0 12px 24px -8px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.12);
+  transform: rotate(-3deg) translateY(0);
+  transition: transform var(--transition-normal);
+  z-index: 2;
+  position: relative;
+}
+
+.device-tablet:hover {
+  transform: rotate(-1deg) translateY(-6px);
+}
+
+.tablet-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #4B3022 0%, #29180F 100%);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.tablet-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Capa Artística do Ebook no Tablet */
+.book-cover-art {
+  padding: 1.5rem 1.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: var(--color-white);
+  border: 1px solid rgba(232, 213, 184, 0.3);
+  margin: 6px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 20%, rgba(233, 104, 53, 0.2) 0%, transparent 70%),
+              linear-gradient(180deg, #3C261A 0%, #21130B 100%);
+}
+
+.cover-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-beige);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(232, 213, 184, 0.3);
+}
+
+.cover-leaf-icon {
+  font-size: 1.8rem;
+  margin: 0.25rem 0;
+}
+
+.cover-main-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-white);
+  letter-spacing: 0.02em;
+}
+
+.cover-sub-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-beige);
+  margin-top: 0.35rem;
+}
+
+.cover-pills-row {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #F5EDE2;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.cover-ingredients-art {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cover-footer-brand {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--color-beige);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Smartphone Mockup ao lado */
+.device-phone {
+  width: 145px;
+  height: 270px;
+  background: #17110E;
+  border-radius: 26px;
+  padding: 9px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.15);
+  position: absolute;
+  right: 15px;
+  bottom: -15px;
+  transform: rotate(6deg);
+  z-index: 3;
+  transition: transform var(--transition-normal);
+}
+
+.device-phone:hover {
+  transform: rotate(3deg) translateY(-6px);
+}
+
+.phone-notch {
+  width: 45px;
+  height: 8px;
+  background: #000;
+  border-radius: 4px;
+  margin: 0 auto 6px;
+}
+
+.phone-screen {
+  width: 100%;
+  height: calc(100% - 14px);
+  background: var(--color-beige-ultra);
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 1rem 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-inner-content {
+  text-align: center;
+  width: 100%;
+}
+
+.phone-icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.phone-heading {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.phone-recipe-bar {
+  width: 80%;
+  height: 5px;
+  background: var(--color-border);
+  border-radius: 3px;
+  margin: 0 auto 4px;
+}
+
+.phone-recipe-bar.short {
+  width: 50%;
+}
+
+.phone-check {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-top: 0.6rem;
+}
+
+/* Selo Flutuante 40 Receitas */
+.floating-seal {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #D45524 100%);
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: var(--shadow-accent);
+  z-index: 4;
+  animation: pulseScale 3s infinite ease-in-out;
+}
+
+.seal-inner {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.seal-number {
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.seal-text {
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   CAIXA DE OFERTA & BOTÃO DE CONVERSÃO (CTA)
+   ========================================================================== */
+.offer-box {
+  background: linear-gradient(180deg, var(--color-beige-ultra) 0%, rgba(247, 239, 228, 0.5) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.85rem;
+  margin-top: 1rem;
+}
+
+.offer-title {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.offer-description {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 1.75rem;
+}
+
+/* Grid de Benefícios */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+  text-align: left;
+  max-width: 580px;
+  margin: 0 auto 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  box-shadow: 0 2px 4px rgba(41, 24, 15, 0.03);
+}
+
+.benefit-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #E8F5E9;
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+/* Botão Principal de Compra (CTA Hotmart) */
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #D45524 100%);
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  padding: 1.25rem 2rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-accent);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(135deg, #F07542 0%, var(--color-accent) 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 35px rgba(233, 104, 53, 0.45);
+}
+
+.btn-cta:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Efeito de Brilho / Shimmer */
+.cta-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shineSweep 3.5s infinite;
+}
+
+.cta-icon {
+  font-size: 1.35rem;
+}
+
+.cta-arrow {
+  font-size: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.btn-cta:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Microcopy de Confiança */
+.cta-microcopy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.cta-microcopy .bullet {
+  color: var(--color-border);
+}
+
+.restart-wrap {
+  margin-top: 1.75rem;
+}
+
+.btn-text-link {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.btn-text-link:hover {
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   RODAPÉ & AVISO LEGAL
+   ========================================================================== */
+.site-footer {
+  margin-top: auto;
+  padding: 2.5rem 0 2rem;
+  background-color: var(--color-primary-dark);
+  color: var(--color-beige);
+  border-top: 3px solid var(--color-accent);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.medical-notice {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--color-accent);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  text-align: left;
+}
+
+.notice-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+  font-size: 0.95rem;
+}
+
+.notice-text {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #D3C3B0;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(232, 213, 184, 0.15);
+  padding-top: 1.5rem;
+}
+
+.copyright {
+  font-size: 0.88rem;
+  color: var(--color-white);
+  margin-bottom: 0.35rem;
+}
+
+.footer-privacy-text {
+  font-size: 0.8rem;
+  color: #BCAAA4;
+}
+
+/* ==========================================================================
+   ANIMAÇÕES
+   ========================================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes shineSweep {
+  0% {
+    left: -100%;
+  }
+  25%, 100% {
+    left: 200%;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE & TABLETS)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .site-header {
+    padding: 2rem 0 1.25rem;
+  }
+
+  .main-title {
+    font-size: 1.7rem;
+  }
+
+  .intro-text {
+    font-size: 0.98rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .ingredient-pills {
+    gap: 0.45rem;
+  }
+
+  .pill {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .quiz-card {
+    padding: 1.5rem 1.25rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .step-question-title {
+    font-size: 1.3rem;
+  }
+
+  .option-btn {
+    padding: 0.9rem 1.1rem;
+    font-size: 0.98rem;
+  }
+
+  .btn-nav {
+    padding: 0.75rem 1.35rem;
+    font-size: 0.92rem;
+  }
+
+  /* Mockup Ajustado para telas pequenas */
+  .mockup-wrapper {
+    min-height: 290px;
+    max-width: 320px;
+  }
+
+  .device-tablet {
+    width: 240px;
+    height: 310px;
+    padding: 10px;
+    border-radius: 22px;
+  }
+
+  .book-cover-art {
+    padding: 1rem 0.75rem;
+    margin: 3px;
+  }
+
+  .cover-main-title {
+    font-size: 1.2rem;
+  }
+
+  .cover-sub-title {
+    font-size: 0.8rem;
+  }
+
+  .device-phone {
+    width: 110px;
+    height: 210px;
+    padding: 6px;
+    right: -5px;
+    bottom: -10px;
+  }
+
+  .phone-screen {
+    padding: 0.6rem 0.4rem;
+  }
+
+  .floating-seal {
+    left: 5px;
+    top: 5px;
+    padding: 4px;
+  }
+
+  .seal-inner {
+    width: 62px;
+    height: 62px;
+  }
+
+  .seal-number {
+    font-size: 1.2rem;
+  }
+
+  .seal-text {
+    font-size: 0.48rem;
+  }
+
+  .result-title {
+    font-size: 1.6rem;
+  }
+
+  .result-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .offer-box {
+    padding: 1.5rem 1.1rem;
+  }
+
+  .offer-title {
+    font-size: 1.35rem;
+  }
+
+  .btn-cta {
+    font-size: 1.02rem;
+    padding: 1.1rem 1.35rem;
+  }
+
+  .cta-microcopy {
+    font-size: 0.76rem;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .cta-microcopy .bullet {
+    display: none;
+  }
+}
